@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Carbon Score",
+    "version": "1.0.0",
+    "description": "A smart carbon footprint tracker for your everyday purchases",
+    "permissions": ["storage", "tabs"],
+    "background": {
+        "scripts": ["build/background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_icon": "logo.png"
+    },
+    "content_scripts": [
+        {
+        "matches": ["https://*/*"],
+        "js": ["build/injection.js"]
+        }
+    ]
+}
